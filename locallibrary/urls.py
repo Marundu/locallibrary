@@ -26,7 +26,7 @@ from django.urls import path
 from django.conf.urls import include
 
 urlpatterns += [
-    path('catalogue/', include('catalogue.urls'))
+    path('catalogue/', include('catalogue.urls')),
 ]
 
 # add URL maps to redirect the base URL to your application
@@ -34,7 +34,7 @@ urlpatterns += [
 from django.views.generic import RedirectView
 
 urlpatterns += [
-    path(''. RedirectView.as_view(url='/catalogue/', permanent=True)),
+    path('', RedirectView.as_view(url='/catalogue/', permanent=True)),
 ]
 
 # enable serving static files during development
