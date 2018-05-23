@@ -20,9 +20,26 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
+# use include() to add paths to the catalogue application
+
 from django.urls import path
 from django.conf.urls import include
 
 urlpatterns += [
     path('catalogue/', include('catalogue.urls'))
 ]
+
+# add URL maps to redirect the base URL to your application
+
+from django.views.generic import RedirectView
+
+urlpatterns += [
+    path(''. RedirectView.as_view(url='/catalogue/', permanent=True)),
+]
+
+# enable serving static files during development
+
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
