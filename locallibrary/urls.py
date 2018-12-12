@@ -22,8 +22,8 @@ urlpatterns = [
 
 # use include() to add paths to the catalogue application
 
+from django.urls import include
 from django.urls import path
-from django.conf.urls import include
 
 urlpatterns += [
     path('catalogue/', include('catalogue.urls')),
