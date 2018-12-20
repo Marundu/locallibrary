@@ -46,6 +46,11 @@ class Book(models.Model):
         
         return reverse('book-detail', args=[str(self.id)])
     
+    '''
+    The function below creates a string from the first three values of the genre field
+    (if they exist) and creates a short_description that can be used in the admin site. 
+    '''
+    
     def display_genre(self):
         
         '''
@@ -56,6 +61,7 @@ class Book(models.Model):
         return ' , '.join(genre.name for genre in self.genre.all()[:3])
     
     display_genre.short_description='Genre'
+
 
 # Book Instance class
 
