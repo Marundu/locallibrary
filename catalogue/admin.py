@@ -30,6 +30,7 @@ class BookAdmin(admin.ModelAdmin):
 
 @admin.register(BookInstance)
 class BookInstanceAdmin(admin.ModelAdmin):
+    list_display=['id', 'book', 'status', 'due_back']
     list_filter=('status', 'due_back')
     
     fieldsets=(
