@@ -11,7 +11,7 @@ admin.site.register(Language)
 # define the AuthorAdmin class
 
 class AuthorAdmin(admin.ModelAdmin):
-    pass
+    list_display=['first_name', 'last_name', 'date_of_birth', 'date_of_death']
 
 # register the admin class with the associated model
 
@@ -19,14 +19,14 @@ admin.site.register(Author, AuthorAdmin)
 
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
-    pass
+    list_display=['title', 'author', 'display_genre']
 
-admin.site.register(Book, BookAdmin)
+#admin.site.register(Book, BookAdmin)
 
 @admin.register(BookInstance)
 class BookInstanceAdmin(admin.ModelAdmin):
     pass
 
-admin.site.register(BookInstance, BookInstanceAdmin)
+#admin.site.register(BookInstance, BookInstanceAdmin)
 
 
