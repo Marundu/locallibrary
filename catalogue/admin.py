@@ -2,8 +2,31 @@ from django.contrib import admin
 
 from .models import Book, Author, Genre, BookInstance, Language
 
-admin.site.register(Book)
-admin.site.register(Author)
+#admin.site.register(Book)
+#admin.site.register(Author)
 admin.site.register(Genre)
-admin.site.register(BookInstance)
+#admin.site.register(BookInstance)
 admin.site.register(Language)
+
+# define the AuthorAdmin class
+
+class AuthorAdmin(admin.ModelAdmin):
+    pass
+
+# register the admin class with the associated model
+
+admin.site.register(Author, AuthorAdmin)
+
+@admin.register(Book)
+class BookAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Book, BookAdmin)
+
+@admin.register(BookInstance)
+class BookInstanceAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(BookInstance, BookInstanceAdmin)
+
+
