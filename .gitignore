@@ -2,3 +2,4 @@
 db.sqlite3
 *.db
 catalogue/migrations/
+catalogue/templates/base_generic.html
