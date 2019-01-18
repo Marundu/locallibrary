@@ -122,3 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Redirect to index URL after logging in (default redirects to accounts/profile/)
+
+LOGIN_REDIRECT_URL='/'
